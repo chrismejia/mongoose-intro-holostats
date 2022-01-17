@@ -1,0 +1,947 @@
+[
+  {
+    "name": "Gawr Gura",
+    "subscribers": {
+      "current": "3,740,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "20,000",
+      "growthLastMonth": "80,000"
+    },
+    "views": {
+      "current": "226,895,402",
+      "growthLastDay": "222,164",
+      "growthLastWeek": "2,923,291",
+      "growthLastMonth": "13,982,120"
+    }
+  },
+  {
+    "name": "Mori Calliope",
+    "subscribers": {
+      "current": "1,880,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "40,000"
+    },
+    "views": {
+      "current": "237,286,055",
+      "growthLastDay": "473,436",
+      "growthLastWeek": "3,929,317",
+      "growthLastMonth": "15,901,116"
+    }
+  },
+  {
+    "name": "Usada Pekora",
+    "subscribers": {
+      "current": "1,840,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "332,413,830",
+      "growthLastDay": "401,661",
+      "growthLastWeek": "3,652,973",
+      "growthLastMonth": "19,260,595"
+    }
+  },
+  {
+    "name": "Shirakami Fubuki",
+    "subscribers": {
+      "current": "1,820,000",
+      "growthLastDay": "10,000",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "80,000"
+    },
+    "views": {
+      "current": "249,711,080",
+      "growthLastDay": "278,405",
+      "growthLastWeek": "3,790,512",
+      "growthLastMonth": "23,967,718"
+    }
+  },
+  {
+    "name": "Houshou Marine",
+    "subscribers": {
+      "current": "1,790,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "50,000"
+    },
+    "views": {
+      "current": "298,591,884",
+      "growthLastDay": "330,842",
+      "growthLastWeek": "3,978,816",
+      "growthLastMonth": "16,880,738"
+    }
+  },
+  {
+    "name": "Inugami Korone",
+    "subscribers": {
+      "current": "1,760,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "181,779,834",
+      "growthLastDay": "347,694",
+      "growthLastWeek": "1,828,925",
+      "growthLastMonth": "8,107,253"
+    }
+  },
+  {
+    "name": "Watson Amelia",
+    "subscribers": {
+      "current": "1,590,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "110,817,065",
+      "growthLastDay": "53,648",
+      "growthLastWeek": "1,399,894",
+      "growthLastMonth": "4,964,864"
+    }
+  },
+  {
+    "name": "Hololive Official",
+    "subscribers": {
+      "current": "1,590,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "40,000"
+    },
+    "views": {
+      "current": "470,643,464",
+      "growthLastDay": "592,074",
+      "growthLastWeek": "5,041,709",
+      "growthLastMonth": "23,047,332"
+    }
+  },
+  {
+    "name": "Uruha Rushia",
+    "subscribers": {
+      "current": "1,540,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "40,000"
+    },
+    "views": {
+      "current": "141,305,629",
+      "growthLastDay": "365,033",
+      "growthLastWeek": "1,626,458",
+      "growthLastMonth": "8,755,620"
+    }
+  },
+  {
+    "name": "Minato Aqua",
+    "subscribers": {
+      "current": "1,460,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "174,913,194",
+      "growthLastDay": "113,246",
+      "growthLastWeek": "1,013,768",
+      "growthLastMonth": "4,547,944"
+    }
+  },
+  {
+    "name": "Kiryu Coco",
+    "subscribers": {
+      "current": "1,450,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "10,000"
+    },
+    "views": {
+      "current": "177,890,086",
+      "growthLastDay": "24,957",
+      "growthLastWeek": "175,570",
+      "growthLastMonth": "740,270"
+    }
+  },
+  {
+    "name": "Shirogane Noel",
+    "subscribers": {
+      "current": "1,400,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "118,002,648",
+      "growthLastDay": "97,971",
+      "growthLastWeek": "929,402",
+      "growthLastMonth": "5,625,654"
+    }
+  },
+  {
+    "name": "Sakura Miko",
+    "subscribers": {
+      "current": "1,350,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "40,000"
+    },
+    "views": {
+      "current": "168,407,081",
+      "growthLastDay": "473,982",
+      "growthLastWeek": "2,633,455",
+      "growthLastMonth": "10,593,407"
+    }
+  },
+  {
+    "name": "Akai Haato",
+    "subscribers": {
+      "current": "1,330,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "161,175,177",
+      "growthLastDay": "135,217",
+      "growthLastWeek": "990,341",
+      "growthLastMonth": "7,507,644"
+    }
+  },
+  {
+    "name": "Ninomae Ina'nis",
+    "subscribers": {
+      "current": "1,330,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "83,192,071",
+      "growthLastDay": "224,028",
+      "growthLastWeek": "1,088,939",
+      "growthLastMonth": "4,294,519"
+    }
+  },
+  {
+    "name": "Hoshimachi Suisei",
+    "subscribers": {
+      "current": "1,300,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "40,000"
+    },
+    "views": {
+      "current": "205,143,373",
+      "growthLastDay": "360,597",
+      "growthLastWeek": "3,466,317",
+      "growthLastMonth": "16,024,132"
+    }
+  },
+  {
+    "name": "Takanashi Kiara",
+    "subscribers": {
+      "current": "1,300,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "104,873,055",
+      "growthLastDay": "153,274",
+      "growthLastWeek": "2,072,181",
+      "growthLastMonth": "7,044,740"
+    }
+  },
+  {
+    "name": "Nekomata Okayu",
+    "subscribers": {
+      "current": "1,290,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "154,671,693",
+      "growthLastDay": "296,477",
+      "growthLastWeek": "2,139,358",
+      "growthLastMonth": "9,324,883"
+    }
+  },
+  {
+    "name": "Oozora Subaru",
+    "subscribers": {
+      "current": "1,240,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "128,121,015",
+      "growthLastDay": "272,173",
+      "growthLastWeek": "2,648,628",
+      "growthLastMonth": "10,796,244"
+    }
+  },
+  {
+    "name": "Nakiri Ayame",
+    "subscribers": {
+      "current": "1,210,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "65,430,425",
+      "growthLastDay": "59,687",
+      "growthLastWeek": "525,337",
+      "growthLastMonth": "3,723,597"
+    }
+  },
+  {
+    "name": "Natsuiro Matsuri",
+    "subscribers": {
+      "current": "1,200,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "101,945,313",
+      "growthLastDay": "141,990",
+      "growthLastWeek": "1,156,645",
+      "growthLastMonth": "4,129,216"
+    }
+  },
+  {
+    "name": "Amane Kanata",
+    "subscribers": {
+      "current": "1,140,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "30,000"
+    },
+    "views": {
+      "current": "168,496,375",
+      "growthLastDay": "1,085,996",
+      "growthLastWeek": "3,225,970",
+      "growthLastMonth": "11,061,438"
+    }
+  },
+  {
+    "name": "Tsunomaki Watame",
+    "subscribers": {
+      "current": "1,140,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "135,989,468",
+      "growthLastDay": "393,093",
+      "growthLastWeek": "2,642,644",
+      "growthLastMonth": "8,145,962"
+    }
+  },
+  {
+    "name": "Shishiro Botan",
+    "subscribers": {
+      "current": "1,060,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "105,403,191",
+      "growthLastDay": "302,162",
+      "growthLastWeek": "1,423,185",
+      "growthLastMonth": "6,346,908"
+    }
+  },
+  {
+    "name": "Moona Hoshinova",
+    "subscribers": {
+      "current": "970,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "7,000",
+      "growthLastMonth": "22,000"
+    },
+    "views": {
+      "current": "49,277,897",
+      "growthLastDay": "49,273",
+      "growthLastWeek": "491,851",
+      "growthLastMonth": "2,389,685"
+    }
+  },
+  {
+    "name": "Murasaki Shion",
+    "subscribers": {
+      "current": "964,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "2,000",
+      "growthLastMonth": "19,000"
+    },
+    "views": {
+      "current": "93,427,800",
+      "growthLastDay": "78,069",
+      "growthLastWeek": "573,301",
+      "growthLastMonth": "4,379,676"
+    }
+  },
+  {
+    "name": "Kureiji Ollie",
+    "subscribers": {
+      "current": "948,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "8,000",
+      "growthLastMonth": "25,000"
+    },
+    "views": {
+      "current": "40,538,341",
+      "growthLastDay": "144,011",
+      "growthLastWeek": "726,907",
+      "growthLastMonth": "2,353,606"
+    }
+  },
+  {
+    "name": "Tokoyami Towa",
+    "subscribers": {
+      "current": "931,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "11,000",
+      "growthLastMonth": "51,000"
+    },
+    "views": {
+      "current": "86,386,434",
+      "growthLastDay": "353,511",
+      "growthLastWeek": "4,598,167",
+      "growthLastMonth": "11,141,184"
+    }
+  },
+  {
+    "name": "Ookami Mio",
+    "subscribers": {
+      "current": "925,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "4,000",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "79,064,990",
+      "growthLastDay": "288,120",
+      "growthLastWeek": "1,130,563",
+      "growthLastMonth": "4,408,001"
+    }
+  },
+  {
+    "name": "Tokino Sora",
+    "subscribers": {
+      "current": "924,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "5,000",
+      "growthLastMonth": "18,000"
+    },
+    "views": {
+      "current": "83,351,505",
+      "growthLastDay": "112,134",
+      "growthLastWeek": "796,750",
+      "growthLastMonth": "3,479,651"
+    }
+  },
+  {
+    "name": "Yukihana Lamy",
+    "subscribers": {
+      "current": "920,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "8,000",
+      "growthLastMonth": "35,000"
+    },
+    "views": {
+      "current": "92,534,868",
+      "growthLastDay": "257,593",
+      "growthLastWeek": "2,454,953",
+      "growthLastMonth": "9,403,712"
+    }
+  },
+  {
+    "name": "Omaru Polka",
+    "subscribers": {
+      "current": "910,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "5,000",
+      "growthLastMonth": "28,000"
+    },
+    "views": {
+      "current": "107,068,236",
+      "growthLastDay": "341,829",
+      "growthLastWeek": "1,139,106",
+      "growthLastMonth": "6,261,760"
+    }
+  },
+  {
+    "name": "Momosuzu Nene",
+    "subscribers": {
+      "current": "868,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "4,000",
+      "growthLastMonth": "28,000"
+    },
+    "views": {
+      "current": "62,607,695",
+      "growthLastDay": "235,629",
+      "growthLastWeek": "606,567",
+      "growthLastMonth": "3,817,648"
+    }
+  },
+  {
+    "name": "Shiranui Flare",
+    "subscribers": {
+      "current": "843,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "3,000",
+      "growthLastMonth": "15,000"
+    },
+    "views": {
+      "current": "87,428,772",
+      "growthLastDay": "68,031",
+      "growthLastWeek": "1,305,665",
+      "growthLastMonth": "5,088,631"
+    }
+  },
+  {
+    "name": "Yuzuki Choco",
+    "subscribers": {
+      "current": "807,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "7,000",
+      "growthLastMonth": "25,000"
+    },
+    "views": {
+      "current": "28,064,751",
+      "growthLastDay": "63,218",
+      "growthLastWeek": "1,132,791",
+      "growthLastMonth": "2,275,167"
+    }
+  },
+  {
+    "name": "Roboco",
+    "subscribers": {
+      "current": "804,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "8,000",
+      "growthLastMonth": "20,000"
+    },
+    "views": {
+      "current": "60,587,423",
+      "growthLastDay": "132,383",
+      "growthLastWeek": "892,221",
+      "growthLastMonth": "2,130,910"
+    }
+  },
+  {
+    "name": "IRyS",
+    "subscribers": {
+      "current": "759,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "7,000",
+      "growthLastMonth": "25,000"
+    },
+    "views": {
+      "current": "29,058,408",
+      "growthLastDay": "50,836",
+      "growthLastWeek": "933,917",
+      "growthLastMonth": "2,593,658"
+    }
+  },
+  {
+    "name": "Himemori Luna",
+    "subscribers": {
+      "current": "758,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "2,000",
+      "growthLastMonth": "15,000"
+    },
+    "views": {
+      "current": "42,663,516",
+      "growthLastDay": "80,562",
+      "growthLastWeek": "242,176",
+      "growthLastMonth": "1,526,194"
+    }
+  },
+  {
+    "name": "Sakamata Chloe",
+    "subscribers": {
+      "current": "719,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "14,000",
+      "growthLastMonth": "93,000"
+    },
+    "views": {
+      "current": "19,308,406",
+      "growthLastDay": "437,880",
+      "growthLastWeek": "1,157,595",
+      "growthLastMonth": "6,996,539"
+    }
+  },
+  {
+    "name": "Yozora Mel",
+    "subscribers": {
+      "current": "674,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "2,000",
+      "growthLastMonth": "18,000"
+    },
+    "views": {
+      "current": "21,490,180",
+      "growthLastDay": "18,126",
+      "growthLastWeek": "216,204",
+      "growthLastMonth": "1,711,872"
+    }
+  },
+  {
+    "name": "La+ Darknesss",
+    "subscribers": {
+      "current": "660,000",
+      "growthLastDay": "2,000",
+      "growthLastWeek": "16,000",
+      "growthLastMonth": "96,000"
+    },
+    "views": {
+      "current": "31,649,571",
+      "growthLastDay": "189,616",
+      "growthLastWeek": "2,565,660",
+      "growthLastMonth": "14,504,382"
+    }
+  },
+  {
+    "name": "Shigure Ui",
+    "subscribers": {
+      "current": "655,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "2,000",
+      "growthLastMonth": "14,000"
+    },
+    "views": {
+      "current": "35,280,974",
+      "growthLastDay": "23,564",
+      "growthLastWeek": "181,896",
+      "growthLastMonth": "1,451,013"
+    }
+  },
+  {
+    "name": "Aki Rosenthal",
+    "subscribers": {
+      "current": "625,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "3,000",
+      "growthLastMonth": "12,000"
+    },
+    "views": {
+      "current": "27,966,207",
+      "growthLastDay": "9,638",
+      "growthLastWeek": "157,699",
+      "growthLastMonth": "768,157"
+    }
+  },
+  {
+    "name": "Ouro Kronii",
+    "subscribers": {
+      "current": "624,000",
+      "growthLastDay": "2,000",
+      "growthLastWeek": "12,000",
+      "growthLastMonth": "50,000"
+    },
+    "views": {
+      "current": "19,218,079",
+      "growthLastDay": "188,943",
+      "growthLastWeek": "734,788",
+      "growthLastMonth": "3,291,654"
+    }
+  },
+  {
+    "name": "Ayunda Risu",
+    "subscribers": {
+      "current": "591,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "2,000",
+      "growthLastMonth": "8,000"
+    },
+    "views": {
+      "current": "39,111,490",
+      "growthLastDay": "10,065",
+      "growthLastWeek": "122,245",
+      "growthLastMonth": "1,069,322"
+    }
+  },
+  {
+    "name": "AZKi",
+    "subscribers": {
+      "current": "562,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "3,000",
+      "growthLastMonth": "14,000"
+    },
+    "views": {
+      "current": "25,310,255",
+      "growthLastDay": "26,163",
+      "growthLastWeek": "180,553",
+      "growthLastMonth": "873,242"
+    }
+  },
+  {
+    "name": "Pavolia Reine",
+    "subscribers": {
+      "current": "543,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "4,000",
+      "growthLastMonth": "13,000"
+    },
+    "views": {
+      "current": "27,184,448",
+      "growthLastDay": "16,774",
+      "growthLastWeek": "293,166",
+      "growthLastMonth": "1,179,880"
+    }
+  },
+  {
+    "name": "Nanashi Mumei",
+    "subscribers": {
+      "current": "518,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "9,000",
+      "growthLastMonth": "38,000"
+    },
+    "views": {
+      "current": "17,092,953",
+      "growthLastDay": "161,295",
+      "growthLastWeek": "1,209,693",
+      "growthLastMonth": "3,156,516"
+    }
+  },
+  {
+    "name": "Airani Iofifteen",
+    "subscribers": {
+      "current": "506,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "3,000",
+      "growthLastMonth": "12,000"
+    },
+    "views": {
+      "current": "14,928,586",
+      "growthLastDay": "23,291",
+      "growthLastWeek": "111,327",
+      "growthLastMonth": "458,864"
+    }
+  },
+  {
+    "name": "Hakui Koyori",
+    "subscribers": {
+      "current": "482,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "13,000",
+      "growthLastMonth": "81,000"
+    },
+    "views": {
+      "current": "25,495,797",
+      "growthLastDay": "325,683",
+      "growthLastWeek": "2,998,409",
+      "growthLastMonth": "13,777,696"
+    }
+  },
+  {
+    "name": "Kazama Iroha",
+    "subscribers": {
+      "current": "470,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "14,000",
+      "growthLastMonth": "91,000"
+    },
+    "views": {
+      "current": "16,836,018",
+      "growthLastDay": "197,451",
+      "growthLastWeek": "1,759,087",
+      "growthLastMonth": "9,249,333"
+    }
+  },
+  {
+    "name": "Hololive English",
+    "subscribers": {
+      "current": "442,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "442,000",
+      "growthLastMonth": "442,000"
+    },
+    "views": {
+      "current": "14,469,900",
+      "growthLastDay": "148,042",
+      "growthLastWeek": "14,469,900",
+      "growthLastMonth": "14,469,900"
+    }
+  },
+  {
+    "name": "Hakos Baelz",
+    "subscribers": {
+      "current": "434,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "8,000",
+      "growthLastMonth": "37,000"
+    },
+    "views": {
+      "current": "20,149,769",
+      "growthLastDay": "127,693",
+      "growthLastWeek": "482,825",
+      "growthLastMonth": "3,517,599"
+    }
+  },
+  {
+    "name": "Anya Melfissa",
+    "subscribers": {
+      "current": "427,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "2,000",
+      "growthLastMonth": "9,000"
+    },
+    "views": {
+      "current": "9,675,058",
+      "growthLastDay": "20,095",
+      "growthLastWeek": "113,481",
+      "growthLastMonth": "522,318"
+    }
+  },
+  {
+    "name": "Ceres Fauna",
+    "subscribers": {
+      "current": "425,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "7,000",
+      "growthLastMonth": "32,000"
+    },
+    "views": {
+      "current": "18,673,640",
+      "growthLastDay": "113,175",
+      "growthLastWeek": "593,026",
+      "growthLastMonth": "2,730,146"
+    }
+  },
+  {
+    "name": "Takane Lui",
+    "subscribers": {
+      "current": "404,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "10,000",
+      "growthLastMonth": "62,000"
+    },
+    "views": {
+      "current": "22,650,199",
+      "growthLastDay": "156,876",
+      "growthLastWeek": "1,414,299",
+      "growthLastMonth": "9,361,122"
+    }
+  },
+  {
+    "name": "Aoi Nabi",
+    "subscribers": {
+      "current": "313,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "1,000"
+    },
+    "views": {
+      "current": "2,459,355",
+      "growthLastDay": "3,950",
+      "growthLastWeek": "11,975",
+      "growthLastMonth": "105,655"
+    }
+  },
+  {
+    "name": "Kagura Nana",
+    "subscribers": {
+      "current": "297,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "1,000",
+      "growthLastMonth": "5,000"
+    },
+    "views": {
+      "current": "19,993,391",
+      "growthLastDay": "80,845",
+      "growthLastWeek": "258,762",
+      "growthLastMonth": "1,023,475"
+    }
+  },
+  {
+    "name": "Yuzuki Choco Sub",
+    "subscribers": {
+      "current": "289,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "3,000"
+    },
+    "views": {
+      "current": "2,910,465",
+      "growthLastDay": "1,792",
+      "growthLastWeek": "15,929",
+      "growthLastMonth": "32,626"
+    }
+  },
+  {
+    "name": "Tsukumo Sana",
+    "subscribers": {
+      "current": "276,000",
+      "growthLastDay": "1,000",
+      "growthLastWeek": "5,000",
+      "growthLastMonth": "22,000"
+    },
+    "views": {
+      "current": "8,588,836",
+      "growthLastDay": "63,002",
+      "growthLastWeek": "100,107",
+      "growthLastMonth": "913,643"
+    }
+  },
+  {
+    "name": "Hololive Indonesia",
+    "subscribers": {
+      "current": "243,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "243,000",
+      "growthLastMonth": "243,000"
+    },
+    "views": {
+      "current": "7,719,979",
+      "growthLastDay": "14,110",
+      "growthLastWeek": "7,719,979",
+      "growthLastMonth": "7,719,979"
+    }
+  },
+  {
+    "name": "Pochimaru",
+    "subscribers": {
+      "current": "201,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "0",
+      "growthLastMonth": "1,000"
+    },
+    "views": {
+      "current": "7,666,189",
+      "growthLastDay": "1,250",
+      "growthLastWeek": "9,552",
+      "growthLastMonth": "88,808"
+    }
+  },
+  {
+    "name": "Ayamy",
+    "subscribers": {
+      "current": "53,000",
+      "growthLastDay": "0",
+      "growthLastWeek": "300",
+      "growthLastMonth": "1,300"
+    },
+    "views": {
+      "current": "1,600,567",
+      "growthLastDay": "3,296",
+      "growthLastWeek": "32,858",
+      "growthLastMonth": "95,092"
+    }
+  }
+]
