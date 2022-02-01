@@ -50,4 +50,19 @@ idolSchema.virtual("namedSubCount").get(function () {
   return `Hi, I'm ${this.name}, and I currently have ${this.subCount} subs on YouTube!`;
 });
 
+// idolSchema.pre("save", function (next) {
+//   this.updatedAt = Date.now();
+//   next();
+// });
+
+idolSchema.pre("save", function (next) {
+  this.updatedAt = Date.now();
+  throw new Error("Failed save");
+});
+
+idolSchema.post("save", function (doc, next) {
+  doc.sayHi();
+  next();
+});
+
 module.exports = mongoose.model("Idol", idolSchema);

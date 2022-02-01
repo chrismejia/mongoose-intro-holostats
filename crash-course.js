@@ -8,7 +8,9 @@ run();
 async function run() {
   try {
     const idol = await Idol.findOne({ subCount: 1880000 });
-    console.log(idol.namedSubCount);
+    console.log(idol);
+    await idol.save();
+    console.log(idol);
   } catch (err) {
     console.error(err.message);
   }

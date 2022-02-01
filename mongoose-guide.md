@@ -5,10 +5,9 @@
 1. After importing mongoose, you can connect to a DB using `.connect()`.
    `.connect()` accepts three params:
 
-- the connection URL (local or remote)
-- a callback run on connection success
-- a callback that handles DB errors
-- Create `/schema/Idol.js`
+   - the connection URL (local or remote)
+   - a callback run on connection success
+   - a callback that handles DB errors
 
 ```js
 mongoose.connect("mongodb://localhost/crashCourse", () => {
@@ -20,6 +19,8 @@ mongoose.connect("mongodb://localhost/crashCourse", () => {
 ```
 
 ## 2. Defining the schema `(/schema/Idol.js)`
+
+- Create `/schema/Idol.js`
 
 Note that the example's types are Capitalized; they are the constructors for that type
 
@@ -77,7 +78,7 @@ run();
 
 ## 7. Examining the DB's save record
 
-1. Now that the idol instance has been created and saved, we can see the output
+Now that the idol instance has been created and saved, we can see the output
 
 ```json
 {
@@ -607,7 +608,7 @@ true;
 
 #### Deleting first match
 
-`Model.deleteOne({ field: searchValue })`. When logged, returns a `{ deletedCount: Number }` object.
+`Model.deleteOne({ field: searchValue })`. When logged, returns a `{ deletedCount:1 }` object if a match was found. Returns `{deletedCount: 0}` when no document match was found
 
 ### Multiple document queries
 
@@ -734,7 +735,7 @@ Limit the results to one `Idol` document. If necessary, update document with mis
 
 ### Value Assignment
 
-**NB: Even with `.limit() in place, results are returned in an array; array will be empty if no matches found.**
+**NB: Even with `.limit()` in place, results are returned in an array; array will be empty if no matches found.**
 
 #### Single value reference
 
@@ -756,7 +757,7 @@ We can push the `ObjectId` value to the references array.
 // Remember that we're dealing with the first value of the results array.
 
 // if illustrator was a field...
-idol[0].unitMembers.push = "61df5c65ec7063a3c645f99e";
+idol[0].unitMembers.push("61df5c65ec7063a3c645f99e");
 await idol[0].save();
 ```
 
@@ -786,9 +787,23 @@ The result will be reflected as an `ObjectId` and **not** a plain string thanks 
 
 `.populate()` is a method that allows you to do what is an essentially a join operation to grab data based off a reference and add it to the current selected entry(ies).
 
-`.populate()` **DOES NOT** modify the populate entry(ies); it automatically replaces the specified paths in the document with document(s) from other collection(s).
+`.populate()` **DOES NOT** modify the populated entry(ies); it automatically replaces the specified paths in the document with document(s) from other collection(s).
 
 We may populate a single document, multiple documents, a plain object, multiple plain objects, or all objects returned from a query.
+
+### Preparing the schema for population
+
+When you have a field that you can populate on, you need to ensure that that field, also contains a `ref` key referring to the Model name to use the ObjectId to search on.
+
+```js
+// Idol.js
+
+// Before
+unitMembers: [mongoose.SchemaTypes.ObjectId]
+
+// After
+unitMembers: { type: [mongoose.SchemaTypes.ObjectId], ref: "Idol" }
+```
 
 ### Adding Ina's data to Calliope's `bestFriend` array.
 
@@ -952,6 +967,14 @@ We can query for data and then use a virtual method to combine queried fields.
 
 Virtual methods are named and use getters and setters, just like Classes can, and therefore are **NOT** invoked. The virtual itself is not a function, but rather its getter/setter function is.
 
+### What purpose do virtual methods serve?
+
+**TL;DR: if you can compose new, commonly used data from existing document fields, use a virtual method, instead of adding a field to the document.**
+
+Let's say that we create a virtual method `namedSubCount`, that will grab a single `Idol` document's `name` and `subCount` fields, format, and return them in a string of our choosing.
+
+If this is an operation that needs to be done often, it's less data for the DB to store if we can form this new data from **already existing** data on a document(s). Here, the `namedSubCount` function allows for us to not have to create a `namedSubCount` field on each `Idol` document.
+
 ```js
 // Idol.js
 
@@ -963,8 +986,11 @@ idolSchema.virtual("namedSubCount").get(function () {
 ```js
 // main.js
 
-// First query for data
-// Then access the virtual method
+/**
+ * First query for data
+ * Once data, a single Idol document, is fetched,
+ * we can call virtual method on that Idol doc
+ */
 
 try {
   const idol = await Idol.findOne({ subCount: 1880000 });
@@ -976,3 +1002,64 @@ try {
 // output:
 // Hi, I'm Mori Calliope, and I currently have 1880000 subs on YouTube!
 ```
+
+## 25. Schema Middleware [(docs)](https://mongoosejs.com/docs/middleware.html)
+
+Schema middleware (also known as _pre-hooks_ and _post-hooks_) works very similarly to `Express` middleware; it allows you to insert and run code in between actions.
+
+There is middleware that covers **saving, validating, removing, and updating one**.
+
+### `.pre()` & `.post()`
+
+As their method name implies, `.pre()` and `.post()` and middleware that run _before_ or _after_ a particular Mongo action occurs.
+
+#### Function signature
+
+Remember that since Mongo documents are essentially instances of a `Model` class, we use `this` to refer to the current instance.
+
+```js
+schemaName.method("<action>", callbackFN(document,next) {
+  // `document` is optional; next can be only field passed in
+
+  // using this!
+  this.someDocField = someStuffEtc
+
+  next() // call it to end this middleware and continue down middleware chain
+});
+
+/**
+ * "<action>": dependent on desired action level; document, model, query, aggregate
+ * see docs for all options
+ */
+```
+
+### Using middleware to update a field
+
+#### `.pre()`
+
+Before every save, we want to update the `updatedAt` field to reflect the time of this latest document `save` action.
+
+```js
+// Idol.js
+
+idolSchema.pre("save", function (next) {
+  this.updatedAt = Date.now();
+});
+```
+
+#### `.post()`
+
+Same idea, but we're gonna use the document we just updated as a parameter
+
+```js
+// Idol.js
+
+idolSchema.post("save", function (doc, next) {
+  doc.sayHi();
+  next();
+});
+```
+
+### Verifying the order of middleware
+
+From our `.pre()` method, remove the `next()` invocation. Notice how the `.post()` doesn't run.
