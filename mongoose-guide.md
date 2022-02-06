@@ -921,7 +921,7 @@ try {
 
 ## 23. Adding methods to queries (make them chainable!)
 
-We can add methods that only operate on queries you make by declaring methods on the `query` object of your schema. For this query method, we'll be chaining mongoose's `.where()` with this `.byName()` function.
+We can add methods that only operate on queries you run to the schema. For this query method, we'll be chaining mongoose's `.where()` with this `.byName()` function.
 
 ```js
 // Idol.js
@@ -951,7 +951,7 @@ try {
   console.error(err.message);
 }
 
-// OR using .where
+// OR using .where(), since it also returns a Query object
 
 try {
   const idols = await Idol.where().byName("Mori");
@@ -1062,4 +1062,20 @@ idolSchema.post("save", function (doc, next) {
 
 ### Verifying the order of middleware
 
-From our `.pre()` method, remove the `next()` invocation. Notice how the `.post()` doesn't run.
+From our `.pre()` method, remove the `next()` invocation. Notice how the operation hangs if `next` isn't called, exactly how it'd hang in a typical Express middleware function.
+
+```js
+// Idol.js
+
+// For the save action, order is pre-save, save, post-save.
+
+idolSchema.pre("save", function (next) {
+  this.updatedAt = Date.now();
+  throw new Error("Failed save"); // no next() call!
+});
+
+idolSchema.post("save", function (doc, next) {
+  doc.sayHi();
+  next();
+});
+```
