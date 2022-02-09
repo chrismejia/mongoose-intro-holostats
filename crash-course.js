@@ -7,9 +7,7 @@ run();
 
 async function run() {
   try {
-    const idol = await Idol.findOne({ subCount: 1880000 });
-    console.log(idol);
-    await idol.save();
+    const idol = await Idol.find();
     console.log(idol);
   } catch (err) {
     console.error(err.message);

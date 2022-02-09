@@ -10,6 +10,8 @@
    - a callback that handles DB errors
 
 ```js
+// main.js
+
 mongoose.connect("mongodb://localhost/crashCourse", () => {
   console.log("Connected to crashCourse DB!"),
     (err) => {
@@ -18,13 +20,15 @@ mongoose.connect("mongodb://localhost/crashCourse", () => {
 });
 ```
 
-## 2. Defining the schema `(/schema/Idol.js)`
+## 2. Defining a basic schema
 
 - Create `/schema/Idol.js`
 
-Note that the example's types are Capitalized; they are the constructors for that type
+Note that the example's types are Capitalized; they are the constructors for that type.
 
 ```js
+// /schema/Idol.js
+
 const idolSchema = new mongoose.Schema({
   name: String,
   height: Number,
@@ -33,25 +37,36 @@ const idolSchema = new mongoose.Schema({
 
 ## 3. Creating and exporting the model
 
-Create the model by naming the collection and defining the schema used to compile the model. Remember, schema methods would need to be defined BEFORE this step occurs!
+Create the model by calling `mongoose.model` and passing it two parameters:
 
-- Go to `crash-course.js`
+- a Capitalized string, serves as the name for the `Model`
+- the variable containing the schema
+
+Ultimately, we want to use this newly created model throughout this project so we need to export it. The exports line should
 
 ```js
+// /schema/Idol.js
+
 module.exports = mongoose.model("Idol", idolSchema);
 ```
 
-## 4. Importing the Idol model `(crash-course.js)`
+## 4. Importing the `Idol` model
+
+We can import `idolSchema` for use in our `main` file the same way we can import any other JS export.
 
 ```js
+// main.js
+
 const Idol = require("./schema/Idol");
 ```
 
-## 5. Creating a new Idol document
+## 5. Creating a `new` Idol document instance
 
 With Idol imported, we can create a new instance of the Idol model, and store its reference in a variable.
 
 ```js
+// main.js
+
 const idol1 = new Idol({ name: "Ina", height: 157 });
 ```
 
@@ -78,7 +93,7 @@ run();
 
 ## 7. Examining the DB's save record
 
-Now that the idol instance has been created and saved, we can see the output
+Now that the idol instance has been created and saved, we can see the `console.log` output:
 
 ```json
 {
@@ -96,28 +111,41 @@ The name and height fields are there as defined in the `idolSchema`, and MongoDB
 
 ## 8. Refactoring `run()` to use a model's `.create()` function
 
-`.create()` is an async function available to Models that combines the `new` instance process and async `.save()` method into one method.
+`.create()` is an async function available to Models that combines the `new` instance process and async `.save()` method into one method. This means that we can consolidate multiple lines of code into a cleaner syntax.
 
-Cleaner syntax.
+### Before: using the `new` keyword and manual `.save()`
+
+```js
+async function run() {
+  const idol2 = new Idol({ name: "Mori Calliope", height: 167 });
+  await idol2.save();
+}
+```
+
+### After: using `Model.create()`
 
 ```js
 async function run() {
   const idol2 = await Idol.create({ name: "Mori Calliope", height: 167 });
-  console.log(idol2);
 }
 ```
 
 ## 9. Manually updating fields on a created document
 
-After the `.create()` method is run, you can edit a document's fields directly and then call `.save()` after.
+After the `.create()` method is run, you can choose to edit a document's fields directly and then call `.save()` after.
 
 ```js
+// main.js
+
 async function run() {
   const idol2 = await Idol.create({ name: "Mori Calliope", height: 167 });
 
-  // manual update here
+  // The new entry is created and stored within the `idol2` variable.
+  // In this example, we're gonna change the details of the newly created document
   idol2.name = "Ina";
   idol2.height = 157;
+
+  // Once the changes are made, you call `.save()` to complete the update.
   idol2.save();
 
   console.log(idol2);
@@ -130,6 +158,7 @@ Let's add to the `Idol` schema.
 
 ```js
 // Idol.js
+
 const idolSchema = new mongoose.Schema({
   name: String,
   height: Number,
@@ -148,7 +177,7 @@ const idolSchema = new mongoose.Schema({
 
 We can create an array of items by simply wrapping the `Type` in array brackets.
 
-`mongoose.SchemaTypes.ObjectId]` tells MongoDB that this field is a reference to another `ObjectId`; another Idol object.
+`mongoose.SchemaTypes.ObjectId]` tells MongoDB that this field is a reference to another `ObjectId`; another Idol object. We'll come back to this value later on in the `.populate()` section.
 
 We can also nest fields inside a document since documents are JSON-based; same rules apply here.
 
@@ -167,9 +196,11 @@ On save, you'll see the console update with these details to the `Mori Calliope`
 
 ## 11. Updating the `Idol` entry
 
-Back in `crash-course`, we can update select fields from the `run()` function to reflect the changes made to the `Idol` schema.
+We can update select fields from the `run()` function to reflect the changes made to the `Idol` schema.
 
 ```js
+// main.js
+
 async function run() {
   const idol2 = await Idol.create({
     name: "Mori Calliope",
@@ -265,7 +296,7 @@ subCount: Number,
 ```
 
 ```js
-// crash-course.js
+// main.js
 
 async function run() {
   const idol2 = await Idol.create({
@@ -291,6 +322,8 @@ UnhandledPromiseRejectionWarning: ValidationError: Idol validation failed: subCo
 ### Wrapped in `try/catch`
 
 ```js
+// main.js
+
 async function run() {
   try {
     const idol2 = await Idol.create({
@@ -320,6 +353,8 @@ To require a field, we have to modify the schema types from just their basic def
 ### Making `fanName` required
 
 ```js
+// schema/Idol.js
+
 const idolSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -345,6 +380,8 @@ const idolSchema = new mongoose.Schema({
 When we save, there is an error produced: `Idol validation failed: fanName: Path 'fanName' is required.`. This can be fixed by assigning a value to that required document field.
 
 ```js
+// main.js
+
 async function run() {
   try {
     const idol2 = await Idol.create({
@@ -516,15 +553,21 @@ Using the built-in validation is nice, but only the `.create()` and `.save()` me
 
 There are lots of Model methods like `.findOneAndReplace()`, or `.updateMany()` that do not use this validation because they work directly on the DB.
 
-Instead, do singular operations and then run `.save()` on them.
+Instead, do singular operations and then run `.save()` on them; the official `mongoose` documentation recommends this as best practice:
 
-```js
-// BAD
-User.findOneAndReplace();
-
-// GOOD
-User.findById().save(); // uses validation
-```
+> `.findOneAndX` and `.findByIdAndX` functions support _limited validation_ that you can enable by setting the `runValidators` option.
+>
+> If you need full-fledged validation, use the traditional approach of first retrieving the document.
+>
+> ```js
+> // BAD
+> await User.findByIdAndReplace(); // supports limited validation; not the full suite
+>
+> // Good: grab the doc(s), update as needed, then manually `.save()`, triggering the validation
+> const doc = await User.findById(id);
+> doc.name = "jason bourne";
+> await doc.save();
+> ```
 
 ## 17. Querying documents
 
@@ -535,6 +578,8 @@ User.findById().save(); // uses validation
 `Model.findById("<ObjectID goes here>")`. Returns a single document object if ID is found. Returns `null` if no match is found.
 
 ```js
+// main.js
+
 try {
   const idol = await Idol.findById("61df446192142667b12c8df6");
   console.log(user);
@@ -567,12 +612,14 @@ try {
 `Model.findOne({ field: searchValue })`. Returns first matching document. Returns `null` if no match found.
 
 ```js
-  try {
-    const idol = await Idol.findOne({ name: "Mori Calliope" });
-    console.log(user);
-  } catch (err) {
-    console.error(err.message);
-  }
+// main.js
+
+try {
+  const idol = await Idol.findOne({ name: "Mori Calliope" });
+  console.log(user);
+} catch (err) {
+  console.error(err.message);
+}
 
 // returns first match (notice how it DOESN'T have the now required fanName field):
 {
@@ -595,6 +642,8 @@ try {
 `Model.exists({ field: searchValue })`. Returns `true` if a document that matches criteria is found. Returns `false` when there's no match.
 
 ```js
+// main.js
+
 try {
   const idol = await Idol.exists({ name: "Mori" });
   console.log(user);
@@ -615,6 +664,8 @@ true;
 `Model.find({ key: searchValue })`. Returns array of all matching documents based on input fields. Returns an empty array when there are no matches.
 
 ```js
+// main.js
+
 try {
   const idols = await Idol.find({ name: "Mori Calliope" });
   console.log(idols);
@@ -651,6 +702,7 @@ const idol = await Idol.where("name").equals("Mori Calliope");
 Let's say we want to find an `Idol` document where the name is `Mori Calliope` and the subcount is `1880000`.
 
 ```js
+// main.js
 const idol = await Idol.where("name")
   .equals("Mori Calliope")
   .where("subCount")
@@ -659,12 +711,25 @@ const idol = await Idol.where("name")
 
 ### Select chainable `.where()` methods
 
-#### Numbers
+These methods just chained version of standard mongodb selectors. Some important ones to know are:
 
 - `.lt(Number)`: less than
 - `.gt(Number)`: greater than
 - `.lte(Number)`: less than or equal to
 - `.gte(Number)`: greater than or equal to
+- `.limit(Number)`: Specifies the maximum number of documents the query will return
+- `.skip(Number)`: Specifies the number of documents to skip
+- `.sort(value)`: Specifies the number of documents to skip
+
+  - valid sort values are `'asc'`, `'desc'`, `'ascending'`, `'descending'`, `1`, and `-1`
+
+    ```js
+    // sort by "field" ascending and "test" descending
+    query.sort({ field: "asc", test: -1 });
+
+    // equivalent
+    query.sort("field -test");
+    ```
 
 #### Multiple Number chains
 
@@ -676,11 +741,13 @@ const idols = await Idol.where("age").gt(19).lte(1000);
 
 ## 19. References and adding `unitMembers`
 
-Modify the `Idol` model's `unitMembers` to tell Mongoose that the `ObjectId` referenced is an instance of the `Idol` model.
+Modify the `Idol` model's `unitMembers` to tell Mongoose that the `ObjectId` referenced is an instance of the `Idol` model. The `ref` option is what tells Mongoose which model to use during population. Let's expand `Idol` into a validation object.
 
 ```js
+// Idol.js
+
 {
-  ...
+  //... earlier fields omitted
   unitMembers: {
     type: [mongoose.SchemaTypes.ObjectId],
     ref: "Idol"
@@ -694,6 +761,8 @@ Modify the `Idol` model's `unitMembers` to tell Mongoose that the `ObjectId` ref
 #### Ina
 
 ```js
+// main.js
+
 try {
   const idol = await Idol.create({
     name: "Ninomae Ina'nis",
@@ -714,6 +783,8 @@ try {
 Add the member to get the `ObjectId`.
 
 ```js
+// main.js
+
 try {
   const idol = await Idol.create({
     name: "Momosuzu Nene",
@@ -739,7 +810,7 @@ Limit the results to one `Idol` document. If necessary, update document with mis
 
 #### Single value reference
 
-In the case of a single value reference, you can directly assign that value with `=`.
+In the case of a single value reference, you can directly assign that value with `=`, as described in an earlier section that first detailed manual updates and saves.
 
 ```js
 // Remember that we're dealing with the first value of the results array.
@@ -793,7 +864,7 @@ We may populate a single document, multiple documents, a plain object, multiple 
 
 ### Preparing the schema for population
 
-When you have a field that you can populate on, you need to ensure that that field, also contains a `ref` key referring to the Model name to use the ObjectId to search on.
+When you have a field that you can populate on, you need to ensure that that field, also contains a `ref` key referring to the Model name to use the `ObjectId` to search on.
 
 ```js
 // Idol.js
@@ -965,7 +1036,7 @@ try {
 
 We can query for data and then use a virtual method to combine queried fields.
 
-Virtual methods are named and use getters and setters, just like Classes can, and therefore are **NOT** invoked. The virtual itself is not a function, but rather its getter/setter function is.
+Virtual methods are named and use getters and setters, just like Classes can, and therefore are **NOT** invoked. The virtual itself is not a function, but rather its getter/setter function is; this means that
 
 ### What purpose do virtual methods serve?
 
@@ -1044,6 +1115,7 @@ Before every save, we want to update the `updatedAt` field to reflect the time o
 
 idolSchema.pre("save", function (next) {
   this.updatedAt = Date.now();
+  next();
 });
 ```
 
@@ -1079,3 +1151,5 @@ idolSchema.post("save", function (doc, next) {
   next();
 });
 ```
+
+The `.post()` save middleware will never run because because there is no `next()` call in the `.pre()` middleware to allow mongoose to move on! Replacing that `throw new Error` call with a `next()` invocation fixes this problem.

@@ -9,15 +9,13 @@ const idolSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   height: Number,
   debut: Date,
   subCount: Number,
-  fanName: {
-    type: String,
-    required: true,
-  },
-  unit: String,
+  fanName: String,
+  unit: { type: String, required: true },
   unitMembers: {
     type: [mongoose.SchemaTypes.ObjectId],
     ref: "Idol",
@@ -55,9 +53,14 @@ idolSchema.virtual("namedSubCount").get(function () {
 //   next();
 // });
 
-idolSchema.pre("save", function (next) {
-  this.updatedAt = Date.now();
-  throw new Error("Failed save");
+// idolSchema.pre("save", function (next) {
+//   this.updatedAt = Date.now();
+//   throw new Error("Failed save");
+
+// });
+
+idolSchema.post("validate", (doc, next) => {
+  console.log(doc);
 });
 
 idolSchema.post("save", function (doc, next) {
